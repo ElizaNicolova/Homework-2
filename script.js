@@ -27,7 +27,7 @@ function fetchJson() {
     
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-               console.log(xmlhttp.responseText);
+                      addTable(JSON.parse(xmlhttp.responseText));
            }
     }
     xmlhttp.open("GET", "https://api.myjson.com/bins/1r3r5", true);
@@ -36,5 +36,4 @@ function fetchJson() {
 
 
 fetchJson();
-
 
