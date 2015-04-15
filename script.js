@@ -4,12 +4,12 @@ function addTable(data) {
 	document.body.appendChild(table);
 
 	for (var i = 0; i < data.length; i++) { 
-		addRow(data[i]);
+		addRow(table, data[i]);
 	}
 }
 
 
-function addRow(d) {
+function addRow(table, d) {
 	var row = table.insertRow();
 	addCell(row, d.name);
 	addCell(row, d.id);
@@ -27,11 +27,10 @@ function fetchJson() {
     
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-               addTable(data);
+               console.log(xmlhttp.responseText);
            }
     }
-
-    xmlhttp.open("GET", "https://bitbucket.org/nedislav-denev/space-busters-nasa-app-challenge-2015/raw/b1072e0facea8861306666faaf15df7ed1d9db46/maxi-flux-tracker/www/demo-api/test.json", true);
+    xmlhttp.open("GET", "https://api.myjson.com/bins/1r3r5", true);
     xmlhttp.send();
 }
 
